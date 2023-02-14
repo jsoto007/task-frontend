@@ -11,7 +11,7 @@ function CategoryContainer( { categories } ) {
                     <CategoryCard 
                         key={category.id}
                         category={category} 
-                    />
+                    />            
                 )
             })}
         </div>

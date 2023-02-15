@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import CategoryContainer from './CategoryContainer';
+import NewTaskForm from "./NewTaskForm";
+
 
 function App() {
 
@@ -14,6 +16,7 @@ function App() {
 
   return (
     <div className="App">
+      <NewTaskForm />
       <CategoryContainer categories={categories} />
     </div>
   );

@@ -16,7 +16,7 @@ function NewTaskForm() {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(tasks),
+      body: JSON.stringify(task),
     })
     .then((resp) => resp.json())
     .then((newTask) => {
@@ -44,13 +44,14 @@ function NewTaskForm() {
           placeholder="Add Task"
         />
         <input
-          type="number"
+          type="text"
           name="id"
           value={task.id}
           id="id"
           onChange={handleChange}
           placeholder="select category"
         />
+        <button type="submit">Add Task</button>
       </form>
 
     </div>

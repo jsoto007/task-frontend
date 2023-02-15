@@ -1,12 +1,15 @@
 import React from "react";
 
-function TasksCard() {
+function TasksCard( { task } ) {
     
-    return (
-        <div>
-            <ul>
-                
-            </ul>
-        </div>
-    )
+  return (
+    <div>
+      <ul>
+        <li>{task.description}</li>
+      </ul>
+    </div>
+  )
 }
+
+
+export default TasksCard;

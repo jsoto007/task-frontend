@@ -5,16 +5,15 @@ import CategoryCard from "./CategoryCard";
 function CategoryContainer( { categories } ) {
 
     return (
-        <div>
-            {categories.map((category) => {
-                return (
-                    <CategoryCard 
-                        key={category.id}
-                        category={category} 
-                    />            
-                )
-            })}
-        </div>
+      <div>
+        {categories.map((category) => {
+            return (
+                <CategoryCard 
+                    category={category} 
+                />            
+            )
+        })}
+      </div>
     )
 }
 

@@ -28,11 +28,17 @@ function App() {
     setCategories(updatedCategories);
   }
 
+  function handleDeleteTask(deletedTask) {
+    console.log("deletedTAsk", deletedTask)
+    const updatedTask = categories.filter((category) => category.id === deletedTask.categorization_id)
+    console.log("form App",updatedTask)
+  }
+
 
   return (
     <div className="App">
       <NewTaskForm onAddTask={handleAddTask} />
-      <CategoryContainer categories={categories} />
+      <CategoryContainer categories={categories} onDelete={handleDeleteTask} />
     </div>
   );
 }

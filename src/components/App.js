@@ -29,10 +29,24 @@ function App() {
   }
 
   function handleDeleteTask(deletedTask) {
-    console.log("deletedTAsk", deletedTask)
-    const updatedTask = categories.filter((category) => category.id === deletedTask.categorization_id)
-    console.log("form App",updatedTask)
+    const foundCatagory = categories.find((cat) => cat.id === deletedTask.categorization_id)
+    const filteredTasks = foundCatagory.tasks.filter((task) => task.id !== deletedTask.id)
+
+    const updatedCategory = {
+      ...foundCatagory, 
+      tasks: [...foundCatagory.tasks, filteredTasks]
+    }
+
+    setCategories(updatedCategory)
+    
   }
+  /*
+
+  find the category
+  make a copy of the category with the updated tasks
+  update state with the updated category
+
+  */
 
 
   return (
@@ -44,3 +58,5 @@ function App() {
 }
 
 export default App;
+
+

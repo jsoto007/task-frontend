@@ -13,10 +13,25 @@ function App() {
     .then(categories => setCategories(categories))
   }, [])
 
+  function handleAddTask(newTask) {
+   const updatedCategories = categories.map((cat)=> {
+    if (cat.id === newTask.categorization_id) {
+      return {
+        ...cat, 
+        tasks: [...cat.tasks, newTask]
+      }
+    } else {
+      return cat
+    }
+
+   })
+    setCategories(updatedCategories);
+  }
+
 
   return (
     <div className="App">
-      <NewTaskForm />
+      <NewTaskForm onAddTask={handleAddTask} />
       <CategoryContainer categories={categories} />
     </div>
   );

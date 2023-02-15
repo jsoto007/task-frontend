@@ -1,8 +1,10 @@
 import React from "react";
 import CategoryCard from "./CategoryCard";
-
+import { v4 as uuidv4 } from 'uuid';
 
 function CategoryContainer( { categories } ) {
+
+  let uniqKey = uuidv4();
 
     return (
       <div>
@@ -10,6 +12,7 @@ function CategoryContainer( { categories } ) {
             return (
                 <CategoryCard 
                     category={category} 
+                    key={category.id}
                 />            
             )
         })}

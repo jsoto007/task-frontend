@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 
 
-function NewTaskForm() {
+function NewTaskForm( { onAddTask } ) {
 
   const [task, setTask] = useState({
-    id: "",
+    categorization_id: "",
     description: ""
   })
 
   function handleSubmit(e) {
     e.preventDefault();
 
-    fetch("http://localhost:9292/categories", {
+    fetch("http://localhost:9292/tasks", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -20,7 +20,7 @@ function NewTaskForm() {
     })
     .then((resp) => resp.json())
     .then((newTask) => {
-      console.log(newTask)
+      onAddTask(newTask)
     });
   }
 
@@ -45,9 +45,9 @@ function NewTaskForm() {
         />
         <input
           type="text"
-          name="id"
-          value={task.id}
-          id="id"
+          name="categorization_id"
+          value={task.categorization_id}
+          id="categorization_id"
           onChange={handleChange}
           placeholder="select category"
         />

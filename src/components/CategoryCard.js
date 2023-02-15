@@ -1,12 +1,9 @@
 import React from "react";
 import TaskCard from './TasksCard'
-import { v4 as uuidv4 } from 'uuid';
 
 function CategoryCard( { category } ) {
-    const {name, tasks, id} = category
+    const {name, tasks} = category
 
-    let myuuid = uuidv4();
-    let uniqKey = uuidv4();
     return (
       <div>
         <ul>

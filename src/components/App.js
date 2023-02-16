@@ -28,6 +28,27 @@ function App() {
     setCategories(updatedCategories);
   }
 
+
+
+  // function handleDeleteTask(deletedTask) {
+  //   console.log(deletedTask)
+  //   const updatedCategory = categories.map((cat) => {
+  //     if ( cat.id === deletedTask.categorization_id) {
+  //       const filteredTasks = cat.tasks.filter((task) => task.id !== deletedTask.id)
+  //       return {
+  //         ...cat, 
+  //         tasks: [filteredTasks]
+  //       }
+  //     } else {
+  //       return cat
+  //     }
+  //   })
+  //   console.log(updatedCategory)
+  // }
+
+
+
+
   function handleDeleteTask(deletedTask) {
     console.log(deletedTask)
     const foundCatagory = categories.find((cat) => cat.id === deletedTask.categorization_id)
@@ -53,7 +74,10 @@ function App() {
   return (
     <div className="App">
       <NewTaskForm onAddTask={handleAddTask} />
-      <CategoryContainer categories={categories} onDelete={handleDeleteTask} />
+      <CategoryContainer 
+        categories={categories} 
+        onDelete={handleDeleteTask} 
+      />
     </div>
   );
 }

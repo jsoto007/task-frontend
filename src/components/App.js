@@ -56,10 +56,10 @@ function App() {
 
     const updatedCategory = {
       ...foundCatagory, 
-        tasks: [...foundCatagory.tasks, filteredTasks]
+        tasks: filteredTasks
     }
 
-    setCategories((categories) => [...categories, updatedCategory])
+    setCategories((categories) => (updatedCategory))
     
   }
   /*

@@ -23,8 +23,8 @@ function App() {
     } else {
       return cat
     }
-
-   })
+    
+  })
     setCategories(updatedCategories);
   }
 
@@ -34,7 +34,7 @@ function App() {
 
     const updatedCategory = {
       ...foundCatagory, 
-      tasks: [...foundCatagory.tasks, filteredTasks]
+      tasks: {...filteredTasks}
     }
 
     setCategories(updatedCategory)

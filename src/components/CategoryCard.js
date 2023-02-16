@@ -1,7 +1,7 @@
 import React from "react";
 import TaskCard from './TasksCard'
 
-function CategoryCard( { category, onDelete } ) {
+function CategoryCard( { category, onDelete, onPatch } ) {
     const {name, tasks} = category
 
     return (
@@ -16,6 +16,7 @@ function CategoryCard( { category, onDelete } ) {
                   onDelete={onDelete}
                   task={task} 
                   key={task.id} 
+                  onPatch={onPatch}
                 />
               )
             })

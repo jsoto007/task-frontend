@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import EditTask from "./EditTask";
 
-function TasksCard( { task, onDelete } ) {
+function TasksCard( { task, onDelete, onPatch } ) {
 
   function handleDeleteClick() {
     fetch(`http://localhost:9292/tasks/${task.id}`, {
@@ -16,7 +16,10 @@ function TasksCard( { task, onDelete } ) {
       <ul>
         <li>{task.description} 
         <button onClick={handleDeleteClick} > X </button>
-        <EditTask id={task.id}/>
+        <EditTask 
+          id={task.id}
+          onPatch={onPatch}
+        />
         </li>
 
       </ul>

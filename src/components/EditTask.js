@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 
-function EditTask( { id } ) {
+function EditTask( { id, onPatch } ) {
 
   const [patchedTask, setPatchedTask] = useState({
     description: ""
@@ -19,7 +19,7 @@ function EditTask( { id } ) {
     })
     .then((resp) => resp.json())
     .then((newPatchedTask) => {
-      console.log(newPatchedTask)
+      onPatch(newPatchedTask)
     });
   }
 

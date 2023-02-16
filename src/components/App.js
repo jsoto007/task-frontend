@@ -23,7 +23,6 @@ function App() {
     } else {
       return cat
     }
-    
   })
     setCategories(updatedCategories);
   }
@@ -31,7 +30,6 @@ function App() {
 
 
   function handleDeleteTask(deletedTask) {
-    console.log(deletedTask)
     const updatedCategory = categories.map((cat) => {
       if ( cat.id === deletedTask.categorization_id) {
         const filteredTasks = cat.tasks.filter((task) => task.id !== deletedTask.id)
@@ -47,6 +45,27 @@ function App() {
   }
 
 
+
+  function handlePatchTask(newPatchedTask) {
+    console.log("newPATCHEDtask", newPatchedTask)
+    const updatedCategories = categories.map((cat)=> {
+      if (cat.id === newPatchedTask.categorization_id) {
+        const filteredTasks = cat.tasks.filter((task) => task.id !== newPatchedTask.id)
+        return {
+          ...cat, 
+          tasks: [...filteredTasks, newPatchedTask]
+
+        }
+      } else {
+        return cat
+      }
+      
+    })
+      setCategories(updatedCategories);
+
+  }
+
+
   /*
   find the category
   make a copy of the category with the updated tasks
@@ -58,6 +77,7 @@ function App() {
     <div className="App">
       <NewTaskForm onAddTask={handleAddTask} />
       <CategoryContainer 
+        onPatch={handlePatchTask}
         categories={categories} 
         onDelete={handleDeleteTask} 
       />

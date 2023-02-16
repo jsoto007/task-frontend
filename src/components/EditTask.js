@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 
 
-function EditTask() {
+function EditTask( { id } ) {
 
   const [patchedTask, setPatchedTask] = useState({
-    id: "",
     description: ""
   })
 
@@ -35,6 +34,16 @@ function EditTask() {
 
   return (
     <div>
+      <form onSubmit={handlePatchSubmit} >
+        <input
+          type="text"
+          name="description"
+          value={patchedTask.description}
+          id="description"
+          onChange={handleChange}
+        />
+        <input type="submit" value="save" />
+      </form>
 
     </div>
   )

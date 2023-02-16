@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import EditTask from "./EditTask";
 
 function TasksCard( { task, onDelete } ) {
 
@@ -16,7 +16,7 @@ function TasksCard( { task, onDelete } ) {
       <ul>
         <li>{task.description} 
         <button onClick={handleDeleteClick} > X </button>
-
+        <EditTask id={task.id}/>
         </li>
 
       </ul>

@@ -47,22 +47,6 @@ function App() {
   }
 
 
-
-
-  // function handleDeleteTask(deletedTask) {
-  //   console.log(deletedTask)
-  //   const foundCatagory = categories.find((cat) => cat.id === deletedTask.categorization_id)
-  //   const filteredTasks = foundCatagory.tasks.filter((task) => task.id !== deletedTask.id)
-
-  //   const updatedCategory = {
-  //     ...foundCatagory, 
-  //       tasks: filteredTasks
-  //   }
-
-  //   setCategories(updatedCategory)
-    
-  // }
-
   /*
   find the category
   make a copy of the category with the updated tasks

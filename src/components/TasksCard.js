@@ -1,12 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 
 
 function TasksCard( { task, onDelete } ) {
 
-  const {id} = task;
-
   function handleDeleteClick() {
-    fetch(`http://localhost:9292/tasks/${id}`, {
+    fetch(`http://localhost:9292/tasks/${task.id}`, {
       method: "DELETE",
     })
     .then((resp) => resp.json())
@@ -16,8 +14,11 @@ function TasksCard( { task, onDelete } ) {
   return (
     <div>
       <ul>
-        <li>{task.description}</li>
+        <li>{task.description} 
         <button onClick={handleDeleteClick} > X </button>
+
+        </li>
+
       </ul>
     </div>
   )

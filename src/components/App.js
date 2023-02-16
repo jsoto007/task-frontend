@@ -30,44 +30,43 @@ function App() {
 
 
 
-  // function handleDeleteTask(deletedTask) {
-  //   console.log(deletedTask)
-  //   const updatedCategory = categories.map((cat) => {
-  //     if ( cat.id === deletedTask.categorization_id) {
-  //       const filteredTasks = cat.tasks.filter((task) => task.id !== deletedTask.id)
-  //       return {
-  //         ...cat, 
-  //         tasks: [filteredTasks]
-  //       }
-  //     } else {
-  //       return cat
-  //     }
-  //   })
-  //   console.log(updatedCategory)
-  // }
-
-
-
-
   function handleDeleteTask(deletedTask) {
     console.log(deletedTask)
-    const foundCatagory = categories.find((cat) => cat.id === deletedTask.categorization_id)
-    const filteredTasks = foundCatagory.tasks.filter((task) => task.id !== deletedTask.id)
-
-    const updatedCategory = {
-      ...foundCatagory, 
-        tasks: filteredTasks
-    }
-
-    setCategories((categories) => (updatedCategory))
-    
+    const updatedCategory = categories.map((cat) => {
+      if ( cat.id === deletedTask.categorization_id) {
+        const filteredTasks = cat.tasks.filter((task) => task.id !== deletedTask.id)
+        return {
+          ...cat, 
+          tasks: filteredTasks
+        }
+      } else {
+        return cat
+      }
+    })
+    setCategories(updatedCategory)
   }
-  /*
 
+
+
+
+  // function handleDeleteTask(deletedTask) {
+  //   console.log(deletedTask)
+  //   const foundCatagory = categories.find((cat) => cat.id === deletedTask.categorization_id)
+  //   const filteredTasks = foundCatagory.tasks.filter((task) => task.id !== deletedTask.id)
+
+  //   const updatedCategory = {
+  //     ...foundCatagory, 
+  //       tasks: filteredTasks
+  //   }
+
+  //   setCategories(updatedCategory)
+    
+  // }
+
+  /*
   find the category
   make a copy of the category with the updated tasks
   update state with the updated category
-
   */
 
 
@@ -83,5 +82,4 @@ function App() {
 }
 
 export default App;
-
 

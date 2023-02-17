@@ -8,8 +8,6 @@ function TasksCard( { task, onDelete, onPatch } ) {
       method: "DELETE",
     })
     .then(onDelete(task))
-    // .then((resp) => resp.json())
-    // .then((deletedTask) => onDelete(deletedTask))
   }
 
   return (

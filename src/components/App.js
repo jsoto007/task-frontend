@@ -44,7 +44,7 @@ function App() {
     setCategories(updatedCategory)
   }
 
-
+// adding 
 
   function handlePatchTask(newPatchedTask) {
 

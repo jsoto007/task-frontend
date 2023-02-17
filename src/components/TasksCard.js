@@ -7,8 +7,9 @@ function TasksCard( { task, onDelete, onPatch } ) {
     fetch(`http://localhost:9292/tasks/${task.id}`, {
       method: "DELETE",
     })
-    .then((resp) => resp.json())
-    .then((deletedTask) => onDelete(deletedTask))
+    .then(onDelete(task))
+    // .then((resp) => resp.json())
+    // .then((deletedTask) => onDelete(deletedTask))
   }
 
   return (

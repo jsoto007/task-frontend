@@ -47,7 +47,6 @@ function App() {
 
 
   function handlePatchTask(newPatchedTask) {
-    console.log("newPATCHEDtask", newPatchedTask)
     const updatedCategories = categories.map((cat)=> {
       if (cat.id === newPatchedTask.categorization_id) {
         const filteredTasks = cat.tasks.filter((task) => task.id !== newPatchedTask.id)

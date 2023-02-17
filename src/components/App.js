@@ -18,7 +18,7 @@ function App() {
     if (cat.id === newTask.categorization_id) {
       return {
         ...cat, 
-        tasks: [...cat.tasks, newTask]
+        tasks: [newTask, ...cat.tasks]
       }
     } else {
       return cat
@@ -47,21 +47,19 @@ function App() {
 
 
   function handlePatchTask(newPatchedTask) {
+
     const updatedCategories = categories.map((cat)=> {
       if (cat.id === newPatchedTask.categorization_id) {
         const filteredTasks = cat.tasks.filter((task) => task.id !== newPatchedTask.id)
         return {
           ...cat, 
-          tasks: [...filteredTasks, newPatchedTask]
-
+          tasks: [newPatchedTask, ...filteredTasks]
         }
       } else {
         return cat
       }
-      
     })
       setCategories(updatedCategories);
-
   }
 
 

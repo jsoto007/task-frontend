@@ -3,6 +3,9 @@ import {Route, Switch } from "react-router-dom"
 import CategoryContainer from './CategoryContainer';
 import NewTaskForm from "./NewTaskForm";
 import NavBar from "./NavBar"
+import { styleBodyTheme } from "./styles/themes"
+import ProjectsNavBar from "./ProjectsNavBar"
+
 
 
 function App() {
@@ -77,27 +80,28 @@ function App() {
     <div className="App">
       <header className="app-header">
         Hello from the header
+        <NavBar />
       </header>
-        <NavBar 
+      <div className="container">
+        <ProjectsNavBar 
           onPatch={handlePatchTask}
           categories={categories} 
           onDelete={handleDeleteTask} 
         />
-
         <Switch>
           <Route exact path="/">
           </Route>
           <Route exact patch="/projects">
             {/* <NewTaskForm onAddTask={handleAddTask} /> */}
-            <CategoryContainer 
-              className="category-container"
+            <CategoryContainer
               onPatch={handlePatchTask}
               categories={categories} 
               onDelete={handleDeleteTask} 
+              styleBodyTheme={styleBodyTheme.body}
             />
           </Route>
         </Switch>
-  
+      </div>
     </div>
   );
 }

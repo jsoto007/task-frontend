@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
 }
 
 code {
@@ -12,9 +13,21 @@ code {
     monospace;
 }
 
-.side-bar-menu {
+.container {
+  display:flex; flex-direction:row;
+}
+
+/* .side-bar-menu {
   float: left;
   margin-right: 15px;
+  background-color: rgba(194, 222, 248, 0.645);
+  border-radius: 26px;
+
+} */
+
+.category-container {
+  float: left; 
+  margin-right: 8px;
   background-color: rgba(194, 222, 248, 0.645);
   border-radius: 26px;
 
@@ -28,8 +41,3 @@ nav a.active {
   border: 2px solid rgba(86, 175, 253, 0.695);
 }
 
-.category-container {
-  float: left;
-  width: 20%;
-  padding: 25px;
-} 

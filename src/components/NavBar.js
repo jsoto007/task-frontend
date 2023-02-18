@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import CategoryContainer from "./CategoryContainer";
 
 
-function NavBar( { categories, onDelete, onAddTask, onPatch  }) {
+function NavBar() {
 
   return (
     <div className="side-bar-menu">
@@ -22,14 +22,6 @@ function NavBar( { categories, onDelete, onAddTask, onPatch  }) {
               Projects
             </NavLink>
       </nav>
-      Hello
-      <CategoryContainer 
-        categories={categories} 
-        onDelete={onDelete} 
-        onAddTask={onAddTask} 
-        onPatch={onPatch} 
-      />
-      
     </div>
   )
 }

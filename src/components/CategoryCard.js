@@ -1,11 +1,13 @@
 import React from "react";
 import TaskCard from './TasksCard'
+import { Container } from "./styles/Container.styled";
 
-function CategoryCard( { category, onDelete, onPatch } ) {
+function CategoryCard( { category, onDelete, onPatch, styleBodyTheme} ) {
     const {name, tasks} = category
 
     return (
-      <div className="category-card">
+      <Container styleBodyTheme={styleBodyTheme}>
+
         <ul>
           {name}
           {/* {
@@ -22,8 +24,7 @@ function CategoryCard( { category, onDelete, onPatch } ) {
             })
           } */}
         </ul>
-
-      </div>
+      </Container>
     )
 }
 

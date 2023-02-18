@@ -11,3 +11,25 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.side-bar-menu {
+  float: left;
+  margin-right: 15px;
+  background-color: rgba(194, 222, 248, 0.645);
+  border-radius: 26px;
+
+}
+
+nav a.active {
+  height: 50 vh;
+  min-height: 400px;
+  color: black;
+  border-radius: 12px;
+  border: 2px solid rgba(86, 175, 253, 0.695);
+}
+
+.category-container {
+  float: left;
+  width: 20%;
+  padding: 25px;
+} 

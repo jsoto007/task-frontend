@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
+import {Route, Switch } from "react-router-dom"
 import CategoryContainer from './CategoryContainer';
 import NewTaskForm from "./NewTaskForm";
+import NavBar from "./NavBar"
 
 
 function App() {
@@ -70,14 +72,32 @@ function App() {
   */
 
 
+
   return (
     <div className="App">
-      <NewTaskForm onAddTask={handleAddTask} />
-      <CategoryContainer 
-        onPatch={handlePatchTask}
-        categories={categories} 
-        onDelete={handleDeleteTask} 
-      />
+      <header className="app-header">
+        Hello from the header
+      </header>
+        <NavBar 
+          onPatch={handlePatchTask}
+          categories={categories} 
+          onDelete={handleDeleteTask} 
+        />
+
+        <Switch>
+          <Route exact path="/">
+          </Route>
+          <Route exact patch="/projects">
+            {/* <NewTaskForm onAddTask={handleAddTask} /> */}
+            <CategoryContainer 
+              className="category-container"
+              onPatch={handlePatchTask}
+              categories={categories} 
+              onDelete={handleDeleteTask} 
+            />
+          </Route>
+        </Switch>
+  
     </div>
   );
 }

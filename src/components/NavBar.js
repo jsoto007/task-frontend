@@ -1,25 +1,36 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import CategoryContainer from "./CategoryContainer";
 
 
-function NavBar() {
+function NavBar( { categories, onDelete, onAddTask, onPatch  }) {
 
   return (
-    <nav id="nav-bar">
-      <NavLink
-        className="nav-link"
-        to="/"
-        exact 
-        >
-          Home
-        </NavLink>
+    <div className="side-bar-menu">
+      <nav id="nav-bar">
         <NavLink
-          className="nav-bar"
-          to="/projects"
+          className="nav-link"
+          to="/"
+          exact 
           >
-            Projects
+            Home
           </NavLink>
-    </nav>
+          <NavLink
+            className="nav-bar"
+            to="/projects"
+            >
+              Projects
+            </NavLink>
+      </nav>
+      Hello
+      <CategoryContainer 
+        categories={categories} 
+        onDelete={onDelete} 
+        onAddTask={onAddTask} 
+        onPatch={onPatch} 
+      />
+      
+    </div>
   )
 }
 

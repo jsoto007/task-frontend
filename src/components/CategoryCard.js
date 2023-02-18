@@ -5,10 +5,10 @@ function CategoryCard( { category, onDelete, onPatch } ) {
     const {name, tasks} = category
 
     return (
-      <div>
+      <div className="category-card">
         <ul>
           {name}
-          {
+          {/* {
             tasks.map((task) => {
               return (
 
@@ -20,7 +20,7 @@ function CategoryCard( { category, onDelete, onPatch } ) {
                 />
               )
             })
-          }
+          } */}
         </ul>
 
       </div>

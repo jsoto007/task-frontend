@@ -7,7 +7,8 @@ function NewTaskForm( { onAddTask } ) {
 
   const [task, setTask] = useState({
     categorization_id: "",
-    description: ""
+    description: "",
+    name: "name"
   })
 
   function handleSubmit(e) {

@@ -21,15 +21,15 @@ function TasksCard( { task, onDelete, onPatch } ) {
     <div>
       <ul>
         <li>{task.description} 
-        <button onClick={handleDeleteClick} > &#10005;</button>
-        {editToggle ? (
-        <EditTask 
-          onEditToggle={handleEditToggle}
-          id={id}
-          taskDescription={description}
-          onPatch={onPatch}
-        />
-        ) : <button onClick={handleEditToggle} role="img">&#9998;</button>}
+          <button onClick={handleDeleteClick} > &#10005;</button>
+          {editToggle ? (
+          <EditTask 
+            onEditToggle={handleEditToggle}
+            id={id}
+            taskDescription={description}
+            onPatch={onPatch}
+          />
+          ) : <button onClick={handleEditToggle} role="img">&#9998;</button>}
         </li>
       </ul>
     </div>

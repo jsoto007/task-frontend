@@ -34,8 +34,6 @@ function App() {
     setCategories(updatedCategories);
   }
 
-
-
   function handleDeleteTask(deletedTask) {
     const updatedCategory = categories.map((cat) => {
       if ( cat.id === deletedTask.categorization_id) {
@@ -51,10 +49,7 @@ function App() {
     setCategories(updatedCategory)
   }
 
-// adding 
-
   function handlePatchTask(newPatchedTask) {
-
     const updatedCategories = categories.map((cat)=> {
       if (cat.id === newPatchedTask.categorization_id) {
         const filteredTasks = cat.tasks.filter((task) => task.id !== newPatchedTask.id)
@@ -68,15 +63,6 @@ function App() {
     })
       setCategories(updatedCategories);
   }
-
-
-  /*
-  find the category
-  make a copy of the category with the updated tasks
-  update state with the updated category
-  */
-
-
 
   return (
     <div className="App">
@@ -102,7 +88,6 @@ function App() {
             />
           </Route>
           <Route patch="/projects">
-            {/* <NewTaskForm onAddTask={handleAddTask} /> */}
             <CategoryContainer
               onPatch={handlePatchTask}
               categories={categories} 

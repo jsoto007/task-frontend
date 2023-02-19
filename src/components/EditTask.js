@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 
 
-function EditTask( { id, onPatch } ) {
+function EditTask( { id, taskDescription, onPatch, onEditToggle } ) {
 
   const [patchedTask, setPatchedTask] = useState({
-    description: ""
+    description: `${taskDescription}`
   })
+
+  console.log("taskDescriptipn", taskDescription)
 
   function handlePatchSubmit(e) {
     e.preventDefault();
@@ -21,8 +23,8 @@ function EditTask( { id, onPatch } ) {
     .then((newPatchedTask) => {
       onPatch(newPatchedTask)
     });
+    onEditToggle(false)
   }
-
 
   function handleChange(e) {
     const key = e.target.id
@@ -42,7 +44,7 @@ function EditTask( { id, onPatch } ) {
           id="description"
           onChange={handleChange}
         />
-        <input type="submit" value="save" />
+        <input type="submit" value="&#10003;" />
       </form>
 
     </div>

@@ -13,7 +13,6 @@ function ProjectsNavBar( { categories, onDelete, onAddTask, onPatch  }) {
         onPatch={onPatch} 
         styleBodyTheme={styleBodyTheme.menu}
       />
-      
     </div>
   )
 }

@@ -6,6 +6,8 @@ import NavBar from "./NavBar"
 import { styleBodyTheme } from "./styles/themes"
 import ProjectsNavBar from "./ProjectsNavBar"
 
+import TasksContainer from "./TasksContainer";
+
 
 
 function App() {
@@ -91,7 +93,15 @@ function App() {
         <Switch>
           <Route exact path="/">
           </Route>
-          <Route exact patch="/projects">
+          <Route exact path="/projects/:id">
+            <TasksContainer 
+              onPatch={handlePatchTask}
+              onDelete={handleDeleteTask}
+              categories={categories}
+              onAddTask={handleAddTask} 
+            />
+          </Route>
+          <Route patch="/projects">
             {/* <NewTaskForm onAddTask={handleAddTask} /> */}
             <CategoryContainer
               onPatch={handlePatchTask}

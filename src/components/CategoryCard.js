@@ -1,28 +1,20 @@
 import React from "react";
-import TaskCard from './TasksCard'
 import { Container } from "./styles/Container.styled";
+import { NavLink } from "react-router-dom";
 
 function CategoryCard( { category, onDelete, onPatch, styleBodyTheme} ) {
-    const {name, tasks} = category
+    const {name, id} = category
 
     return (
       <Container styleBodyTheme={styleBodyTheme}>
 
-        <ul>
+        <ul id={category.id}>
+          <NavLink
+            id="category-to-task"
+            to={`/projects/${id}`}
+          >
           {name}
-          {/* {
-            tasks.map((task) => {
-              return (
-
-                <TaskCard 
-                  onDelete={onDelete}
-                  task={task} 
-                  key={task.id} 
-                  onPatch={onPatch}
-                />
-              )
-            })
-          } */}
+          </NavLink>
         </ul>
       </Container>
     )

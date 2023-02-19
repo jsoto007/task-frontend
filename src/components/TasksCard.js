@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import EditTask from "./EditTask";
 
 function TasksCard( { task, onDelete, onPatch } ) {
+
 
   function handleDeleteClick() {
     fetch(`http://localhost:9292/tasks/${task.id}`, {
@@ -9,6 +10,7 @@ function TasksCard( { task, onDelete, onPatch } ) {
     })
     .then(onDelete(task))
   }
+
 
   return (
     <div>

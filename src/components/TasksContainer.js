@@ -9,7 +9,6 @@ function TasksContainer( { onPatch, onDelete, categories, onAddTask } ) {
   const foundCategory = categories.find((cat) => cat.id === parseInt(parasm.id))
   const { tasks } = foundCategory
 
-
   return (
     <div>
      <ul id="task-form">
@@ -26,7 +25,6 @@ function TasksContainer( { onPatch, onDelete, categories, onAddTask } ) {
             onDelete={onDelete}
           />
         )
-
       })}
     </div>
   )

@@ -2,15 +2,13 @@ import React, { useEffect, useState } from "react";
 import EditTask from "./EditTask";
 
 function TasksCard( { task, onDelete, onPatch } ) {
-
-
+  
   function handleDeleteClick() {
     fetch(`http://localhost:9292/tasks/${task.id}`, {
       method: "DELETE",
     })
     .then(onDelete(task))
   }
-
 
   return (
     <div>

@@ -2,7 +2,7 @@ import React from "react";
 import { Container } from "./styles/Container.styled";
 import { NavLink } from "react-router-dom";
 
-function CategoryCard( { category, onDelete, onPatch, styleBodyTheme} ) {
+function CategoryCard( { category, styleBodyTheme} ) {
     const {name, id} = category
 
     return (

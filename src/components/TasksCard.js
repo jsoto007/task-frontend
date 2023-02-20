@@ -20,7 +20,7 @@ function TasksCard( { task, onDelete, onPatch } ) {
   return (
     <div>
       <ul>
-        <li>{task.description} 
+        <li><b>{task.name}</b> | <b>Description:</b>{task.description} 
           <button onClick={handleDeleteClick} > &#10005;</button>
           {editToggle ? (
           <EditTask 

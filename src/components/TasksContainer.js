@@ -10,12 +10,13 @@ function TasksContainer( { onPatch, onDelete, categories, onAddTask } ) {
   const { tasks } = foundCategory
 
   return (
-    <div>
+    <div className="tasks-container">
      <ul id="task-form">
       <NewTaskForm 
         onAddTask={onAddTask} 
       />
      </ul>
+     <h3 className="title">{foundCategory.name}</h3>
       {tasks.map((task) => {
         return (
           <TasksCard 

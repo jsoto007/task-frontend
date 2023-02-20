@@ -18,20 +18,22 @@ code {
   display:flex; flex-direction:row;
 }
 
-/* .side-bar-menu {
-  float: left;
-  margin-right: 15px;
-  background-color: rgba(194, 222, 248, 0.645);
-  border-radius: 26px;
-
-} */
+.title {
+  text-align: -webkit-center;
+}
 
 .category-container {
   float: left; 
   margin-right: 8px;
-  background-color: rgba(194, 222, 248, 0.645);
+  background-color: #8eb5d36c;
   border-radius: 26px;
+}
 
+.tasks-container {
+  float: right; 
+  margin-right: 8px;
+  background-color: #8eb5d36c;
+  border-radius: 26px;
 }
 
 nav a.active {

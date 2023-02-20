@@ -1,11 +1,20 @@
 import React from "react";
 import CategoryCard from "./CategoryCard";
+import NewCategoryForm from "./NewCategoryForm";
 
 
-function CategoryContainer( { categories, onDelete, onAddTask, onPatch, styleBodyTheme } ) {
+function CategoryContainer( { 
+  onAddCategory,
+  categories, 
+  onDelete, 
+  onAddTask, 
+  onPatch, 
+  styleBodyTheme 
+} ) {
 
     return (
       <div className="category-container">
+        <NewCategoryForm onAddCategory={onAddCategory} />
         {categories.map((category) => {
             return (
                 <CategoryCard

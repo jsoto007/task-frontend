@@ -64,6 +64,11 @@ function App() {
       setCategories(updatedCategories);
   }
 
+  function handleAddCategory(newCategory) {
+    console.log("new catf", newCategory)
+    setCategories([...categories, newCategory])
+  }
+
   return (
     <div className="App">
       <header className="app-header">
@@ -89,6 +94,7 @@ function App() {
           </Route>
           <Route patch="/projects">
             <CategoryContainer
+              onAddCategory={handleAddCategory}
               onPatch={handlePatchTask}
               categories={categories} 
               onDelete={handleDeleteTask} 

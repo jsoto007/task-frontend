@@ -20,6 +20,7 @@ function NewCategoryForm( { onAddCategory } ) {
     .then((resp) => resp.json())
     .then((newCategory) => {
       onAddCategory(newCategory)
+
     });
   }
 

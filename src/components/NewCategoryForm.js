@@ -32,13 +32,14 @@ function NewCategoryForm( { onAddCategory } ) {
   }
 
   return (
-    <div>
+    <div className="category-form">
       <form onSubmit={handleSubmit}>
         <input
           type="text"
           id="name"
           value={categoryForm.name}
           onChange={handleChange}
+          placeholder="Add new category"
         />
         <input type="submit" value="&#10003;" />
       </form>

@@ -4,10 +4,10 @@ import EditTask from "./EditTask";
 function TasksCard( { task, onDelete, onPatch } ) {
   const [editToggle, setEditToggle] = useState(false)
 
-  const {id, description} = task
+  const {id, description, name} = task
 
   function handleDeleteClick() {
-    fetch(`http://localhost:9292/tasks/${task.id}`, {
+    fetch(`http://localhost:9292/tasks/${id}`, {
       method: "DELETE",
     })
     .then(onDelete(task))
@@ -20,7 +20,7 @@ function TasksCard( { task, onDelete, onPatch } ) {
   return (
     <div>
       <ul>
-        <li><b>{task.name}</b> | <b>Description:</b>{task.description} 
+        <li><em>Task:{name}</em> | <em>Description:</em>{description} 
           <button onClick={handleDeleteClick} > &#10005;</button>
           {editToggle ? (
           <EditTask 

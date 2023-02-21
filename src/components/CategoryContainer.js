@@ -4,6 +4,7 @@ import NewCategoryForm from "./NewCategoryForm";
 
 
 function CategoryContainer( { 
+  onDeletedCategory,
   onAddCategory,
   categories, 
   onDelete, 
@@ -18,6 +19,7 @@ function CategoryContainer( {
         {categories.map((category) => {
             return (
                 <CategoryCard
+                onDeletedCategory={onDeletedCategory}
                 onAddTask={onAddTask}
                 onDelete={onDelete}
                 category={category} 

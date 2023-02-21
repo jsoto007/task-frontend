@@ -19,19 +19,23 @@ function App() {
     .then(resp => resp.json())
     .then(categories => setCategories(categories))
   }, [])
-
+  
   function handleAddTask(newTask) {
-   const updatedCategories = categories.map((cat)=> {
-    if (cat.id === newTask.categorization_id) {
-      return {
-        ...cat, 
-        tasks: [newTask, ...cat.tasks]
+    const updatedCategories = categories.map((cat)=> {
+      if (cat.id === newTask.categorization_id) {
+        return {
+          ...cat, 
+          tasks: [newTask, ...cat.tasks]
+        }
+      } else {
+        return cat
       }
-    } else {
-      return cat
-    }
-  })
+    })
     setCategories(updatedCategories);
+  }
+
+  function handleAddCategory(newCategory) {
+    setCategories([...categories, newCategory])
   }
 
   function handleDeleteTask(deletedTask) {
@@ -49,6 +53,11 @@ function App() {
     setCategories(updatedCategory)
   }
 
+  function handleDeleteCategory(deletedCategory) {
+
+    console.log(deletedCategory)
+  }
+
   function handlePatchTask(newPatchedTask) {
     const updatedCategories = categories.map((cat)=> {
       if (cat.id === newPatchedTask.categorization_id) {
@@ -64,10 +73,6 @@ function App() {
       setCategories(updatedCategories);
   }
 
-  function handleAddCategory(newCategory) {
-    console.log("new catf", newCategory)
-    setCategories([...categories, newCategory])
-  }
 
   return (
     <div className="App">
@@ -94,6 +99,7 @@ function App() {
           </Route>
           <Route patch="/projects">
             <CategoryContainer
+              onDeletedCategory={handleDeleteCategory}
               onAddCategory={handleAddCategory}
               onPatch={handlePatchTask}
               categories={categories} 

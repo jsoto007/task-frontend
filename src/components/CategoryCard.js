@@ -1,8 +1,9 @@
 import React from "react";
 import { Container } from "./styles/Container.styled";
 import { NavLink } from "react-router-dom";
+import DeleteCategory from "./DeleteCategory";
 
-function CategoryCard( { category, styleBodyTheme} ) {
+function CategoryCard( { category, styleBodyTheme, onDeletedCategory} ) {
     const {name, id} = category
 
     return (
@@ -15,7 +16,12 @@ function CategoryCard( { category, styleBodyTheme} ) {
           >
           {name}
           </NavLink>
+          <DeleteCategory  
+            category={category}
+            onDeletedCategory={onDeletedCategory}
+          />
         </ul>
+
       </Container>
     )
 }

@@ -7,8 +7,6 @@ function EditTask( { id, taskDescription, onPatch, onEditToggle } ) {
     description: `${taskDescription}`
   })
 
-  console.log("taskDescriptipn", taskDescription)
-
   function handlePatchSubmit(e) {
     e.preventDefault();
 

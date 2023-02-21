@@ -36,6 +36,14 @@ code {
   border-radius: 26px;
 }
 
+.category-form {
+  float: right;
+}
+
+em {
+  font-weight: bold;
+}
+
 nav a.active {
   height: 50 vh;
   min-height: 400px;

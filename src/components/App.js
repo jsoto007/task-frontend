@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import {Route, Switch } from "react-router-dom"
-import CategoryContainer from './CategoryContainer';
-import NewTaskForm from "./NewTaskForm";
-import NavBar from "./NavBar"
 import { styleBodyTheme } from "./styles/themes"
 import ProjectsNavBar from "./ProjectsNavBar"
-
 import TasksContainer from "./TasksContainer";
+import CategoryContainer from './CategoryContainer';
+import NavBar from "./NavBar"
+import Header from "./Header"
+
 
 
 
@@ -76,12 +76,12 @@ function App() {
 
   return (
     <div className="App">
-      <header className="app-header">
-        Hello from the header
+        <Header />
         <NavBar />
-      </header>
       <div className="container">
         <ProjectsNavBar 
+          onAddCategory={handleAddCategory}
+          onDeletedCategory={handleDeleteCategory}
           onPatch={handlePatchTask}
           categories={categories} 
           onDelete={handleDeleteTask} 

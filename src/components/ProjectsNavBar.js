@@ -2,13 +2,14 @@ import React from "react";
 import CategoryContainer from "./CategoryContainer";
 import { styleBodyTheme } from "./styles/themes"
 
-function ProjectsNavBar( { categories, onDelete, onAddTask, onPatch  }) {
+function ProjectsNavBar( { categories, onAddTask, onPatch, onDeletedCategory, onAddCategory }) {
 
   return (
     <div className="side-bar-menu">
-      <CategoryContainer 
+      <CategoryContainer
+        onAddCategory={onAddCategory}
+        onDeletedCategory={onDeletedCategory}
         categories={categories} 
-        onDelete={onDelete} 
         onAddTask={onAddTask} 
         onPatch={onPatch} 
         styleBodyTheme={styleBodyTheme.menu}

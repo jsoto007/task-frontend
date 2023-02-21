@@ -21,6 +21,42 @@ img {
   margin-top: 15px;
   margin-bottom: 5px;
 }
+
+
+
+.category-form input[type=text] {
+  padding: 15px;
+  font-size: 17px;
+  float: left;
+  width: 600px;
+  height: 0px;
+  border-radius: 26px;
+  background: white;
+  margin-left: -70%;
+}
+
+.category-form button {
+
+  width: 8%;
+  padding: 7px;
+  background: #dfdcdc7a;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+  border-radius: 26px;
+  margin-left: 15px;
+}
+
+.category-form {
+  text-align: row;
+  margin-left: 50%;
+  margin-top: 52px;
+  /* flex-direction: row; */
+}
+
+.headers {
+  display:flex; flex-direction:row;
+}
 .container {
   display:flex; flex-direction:row;
 }

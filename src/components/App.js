@@ -10,6 +10,7 @@ import Header from "./Header"
 
 
 
+
 function App() {
 
   const [categories, setCategories] = useState([]);
@@ -76,7 +77,9 @@ function App() {
 
   return (
     <div className="App">
-        <Header />
+        <Header  
+          onAddCategory={handleAddCategory} 
+        />
         <NavBar />
       <div className="container">
         <ProjectsNavBar 

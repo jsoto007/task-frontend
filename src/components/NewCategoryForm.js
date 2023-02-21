@@ -6,6 +6,7 @@ function NewCategoryForm( { onAddCategory } ) {
   const [categoryForm, setCategoryForm] = useState({
     name: ""
   })
+
   function handleSubmit(e) {
     e.preventDefault();
 
@@ -41,9 +42,9 @@ function NewCategoryForm( { onAddCategory } ) {
           onChange={handleChange}
           placeholder="Add new category"
         />
-        <input type="submit" value="&#10003;" />
+        <button type="submit"><span role="img" alt="submit">&#10003;</span></button>
+        {/* <input type="submit" value="&#10003;" /> */}
       </form>
-
     </div>
   )
 }

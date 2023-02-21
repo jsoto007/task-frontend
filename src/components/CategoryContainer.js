@@ -1,11 +1,9 @@
 import React from "react";
 import CategoryCard from "./CategoryCard";
-import NewCategoryForm from "./NewCategoryForm";
 
 
 function CategoryContainer( { 
   onDeletedCategory,
-  onAddCategory,
   categories, 
   onAddTask, 
   styleBodyTheme 
@@ -13,7 +11,6 @@ function CategoryContainer( {
 
     return (
       <div className="category-container">
-        <NewCategoryForm onAddCategory={onAddCategory} />
         {categories.map((category) => {
             return (
                 <CategoryCard

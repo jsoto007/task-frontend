@@ -54,8 +54,8 @@ function App() {
   }
 
   function handleDeleteCategory(deletedCategory) {
-
-    console.log(deletedCategory)
+    const updatedCategories = categories.filter((cat) => cat.id !== deletedCategory.id)
+    setCategories(updatedCategories)
   }
 
   function handlePatchTask(newPatchedTask) {

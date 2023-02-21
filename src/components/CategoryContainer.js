@@ -7,9 +7,7 @@ function CategoryContainer( {
   onDeletedCategory,
   onAddCategory,
   categories, 
-  onDelete, 
   onAddTask, 
-  onPatch, 
   styleBodyTheme 
 } ) {
 
@@ -21,10 +19,8 @@ function CategoryContainer( {
                 <CategoryCard
                 onDeletedCategory={onDeletedCategory}
                 onAddTask={onAddTask}
-                onDelete={onDelete}
                 category={category} 
                 key={category.id}
-                onPatch={onPatch}
                 styleBodyTheme={styleBodyTheme} 
                 />            
             )

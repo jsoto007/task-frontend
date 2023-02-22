@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+import { useParams } from "react-router-dom";
+
 
 function NewTaskForm( { onAddTask } ) {
 
-
+  const { id } = useParams();
+ 
   const [task, setTask] = useState({
-    categorization_id: "",
     description: "",
     name: "name"
   })
@@ -12,7 +14,7 @@ function NewTaskForm( { onAddTask } ) {
   function handleSubmit(e) {
     e.preventDefault();
 
-    fetch("http://localhost:9292/tasks", {
+    fetch(`http://localhost:9292/categories/tasks/${id}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -21,7 +23,7 @@ function NewTaskForm( { onAddTask } ) {
     })
     .then((resp) => resp.json())
     .then((newTask) => {
-      onAddTask(newTask)
+      console.log(newTask)
     });
   }
 

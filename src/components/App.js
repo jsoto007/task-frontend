@@ -9,8 +9,6 @@ import Header from "./Header"
 
 
 
-
-
 function App() {
 
   const [categories, setCategories] = useState([]);

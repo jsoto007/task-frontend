@@ -8,7 +8,7 @@ function NewTaskForm( { onAddTask } ) {
  
   const [task, setTask] = useState({
     description: "",
-    name: "name"
+    name: ""
   })
 
   function handleSubmit(e) {
@@ -40,19 +40,19 @@ function NewTaskForm( { onAddTask } ) {
       <form onSubmit={handleSubmit}>
         <input
           type="text"
+          name="name"
+          value={task.name}
+          id="name"
+          onChange={handleChange}
+          placeholder="Add Task Name"
+        />
+        <input
+          type="text"
           name="description"
           value={task.description}
           id="description"
           onChange={handleChange}
-          placeholder="Add Task"
-        />
-        <input
-          type="text"
-          name="categorization_id"
-          value={task.categorization_id}
-          id="categorization_id"
-          onChange={handleChange}
-          placeholder="select category"
+          placeholder="Add Task Description"
         />
         <button type="submit">Add Task</button>
       </form>

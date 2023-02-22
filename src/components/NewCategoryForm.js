@@ -44,7 +44,6 @@ function NewCategoryForm( { onAddCategory } ) {
           placeholder="Add new category"
         />
         <button type="submit"><span role="img" alt="submit">&#10003;</span></button>
-        {/* <input type="submit" value="&#10003;" /> */}
       </form>
     </div>
   )

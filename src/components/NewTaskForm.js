@@ -4,8 +4,8 @@ import { useParams } from "react-router-dom";
 
 function NewTaskForm( { onAddTask } ) {
 
-  const { id } = useParams();
- 
+  const { id: category_id } = useParams();
+
   const [task, setTask] = useState({
     description: "",
     name: ""
@@ -13,8 +13,9 @@ function NewTaskForm( { onAddTask } ) {
 
   function handleSubmit(e) {
     e.preventDefault();
-
-    fetch(`http://localhost:9292/categories/tasks/${id}`, {
+    // (`http://localhost:9292/categories/tasks/${id}`
+// "/categories/:category_id/tasks"
+    fetch(`http://localhost:9292/categories/${category_id}/tasks`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

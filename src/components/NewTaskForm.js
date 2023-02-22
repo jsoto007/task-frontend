@@ -23,7 +23,7 @@ function NewTaskForm( { onAddTask } ) {
     })
     .then((resp) => resp.json())
     .then((newTask) => {
-      console.log(newTask)
+      onAddTask(newTask)
     });
   }
 

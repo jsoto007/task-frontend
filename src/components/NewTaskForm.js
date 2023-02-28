@@ -13,8 +13,6 @@ function NewTaskForm( { onAddTask } ) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    // (`http://localhost:9292/categories/tasks/${id}`
-// "/categories/:category_id/tasks"
     fetch(`http://localhost:9292/categories/${category_id}/tasks`, {
       method: "POST",
       headers: {
@@ -26,6 +24,10 @@ function NewTaskForm( { onAddTask } ) {
     .then((newTask) => {
       onAddTask(newTask)
     });
+    setTask({
+      description: "",
+      name: ""
+    })
   }
 
   function handleChange(e) {
@@ -55,7 +57,7 @@ function NewTaskForm( { onAddTask } ) {
           onChange={handleChange}
           placeholder="Add Task Description"
         />
-        <button type="submit">Add Task</button>
+        <button type="submit" >Add Task</button>
       </form>
 
     </div>

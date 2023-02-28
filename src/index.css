@@ -68,14 +68,14 @@ img {
 .category-container {
   float: left; 
   margin-right: 8px;
-  background-color: #8eb5d36c;
+  background-color: #d1d1d179;
   border-radius: 26px;
 }
 
 .tasks-container {
   float: right; 
   margin-right: 8px;
-  background-color: #8eb5d36c;
+  background-color: #D1D1D1;
   border-radius: 26px;
 }
 
